@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: cdbb40e11399e4a17882ada20a1b896a, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 005dfd01ad470b4409a0347a41b56d51, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -419,7 +419,7 @@ Transform:
   - {fileID: 1929849120}
   - {fileID: 1655996262}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1026590145 stripped
 Transform:
@@ -551,7 +551,7 @@ Transform:
   m_Children:
   - {fileID: 1026590145}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1929849120 stripped
 Transform:
@@ -794,6 +794,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706963229665949671, guid: aba4eeb35c00b2240a99b2a530717493,
+        type: 3}
+      propertyPath: jumpPower
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1706963229665949673, guid: aba4eeb35c00b2240a99b2a530717493,
         type: 3}
