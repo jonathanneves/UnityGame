@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ball_Movement : MonoBehaviour
 {
@@ -13,13 +14,15 @@ public class Ball_Movement : MonoBehaviour
     float vInput;
     bool jumpInput;
 
-
+    public GameObject particulaItem;
+    private int pontos;
+    public Text txtPontos;
+    private bool podeganhar = false;
 
     // Start is called before the first frame update
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
-
     }
 
     // Update is called once per frame
@@ -34,12 +37,15 @@ public class Ball_Movement : MonoBehaviour
     {
         Move();
 
-        if (jumpInput)
+        if (Physics.Raycast(transform.position, Vector3.down, 0.6f))
         {
-            Jump();
-            jumpInput = false;
-        }
 
+            if (jumpInput)
+            {
+                Jump();
+            }
+
+        }
     }
 
     void Move()
@@ -52,5 +58,22 @@ public class Ball_Movement : MonoBehaviour
         myRigidbody.AddForce(Vector3.up * jumpPower * Time.fixedDeltaTime, ForceMode.Impulse);
     }
 
+    private void OnTriggerEnter(Collider o)
+    {
+        if (o.gameObject.CompareTag("Item")){
+            Instantiate(particulaItem, o.gameObject.transform.position, Quaternion.identity);
+            Destroy(o.gameObject);
+            pontos++;
+            txtPontos.text = "Pontos: " + pontos.ToString();
+
+            if (pontos >= 3 && pontos <= 5){
+                podeganhar = true;
+                Debug.Log("Pode Ganhar");
+            }else{
+                podeganhar = false;
+                Debug.Log("Não pode ganhar ainda");
+            }
+        }
+    }
 
 }
