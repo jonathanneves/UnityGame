@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 715219228484583342}
-  - component: {fileID: 5404689052191239445}
   - component: {fileID: -6050199521826688544}
+  - component: {fileID: 575274315053203325}
   m_Layer: 0
   m_Name: Banana
   m_TagString: Item
@@ -25,27 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4591316198612585917}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.74624157, y: 1.4979764, z: -2.91}
+  m_LocalRotation: {x: 0.4924039, y: 0.08682413, z: 0.1503838, w: -0.85286856}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 7846344947163811747}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5404689052191239445
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4591316198612585917}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5, y: 1, z: 2}
-  m_Center: {x: 0.5, y: 0, z: -0.5}
+  m_LocalEulerAnglesHint: {x: 300, y: 0, z: -20}
 --- !u!114 &-6050199521826688544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,6 +45,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73df58e579ad0624ba74b3ff2694ab96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+--- !u!65 &575274315053203325
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4591316198612585917}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.6096448, z: 4.3749495}
+  m_Center: {x: -0.0000017238232, y: -0.4574368, z: -1.6874744}
 --- !u!1 &4874055578091154257
 GameObject:
   m_ObjectHideFlags: 0
@@ -83,8 +84,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4874055578091154257}
-  m_LocalRotation: {x: 0.54893017, y: 0.5489301, z: 0.44573048, w: 0.44573057}
-  m_LocalPosition: {x: 2.0041459, y: 0.50984347, z: -0.4569186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 134.06522, y: 134.06522, z: 134.06522}
   m_Children: []
   m_Father: {fileID: 715219228484583342}

@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Roll_Item : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    [SerializeField] float speed = 5f;
     void Update()
     {
-        transform.Rotate(new Vector3(0, 30, 0) * Time.deltaTime);
+        transform.Rotate(new Vector3(0, 30, 0) * speed * Time.deltaTime);
     }
+
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Ball_Movement : MonoBehaviour
 {
 
+
     Rigidbody myRigidbody;
 
     [SerializeField] float moveSpeed = 0f;
@@ -14,10 +15,10 @@ public class Ball_Movement : MonoBehaviour
     float vInput;
     bool jumpInput;
 
+    [Header("UI")]
+    public GameObject score;
     public GameObject particulaItem;
-    private int pontos;
-    public Text txtPontos;
-    private bool podeganhar = false;
+    public GameObject popUpScore;
 
     // Start is called before the first frame update
     void Start()
@@ -61,18 +62,14 @@ public class Ball_Movement : MonoBehaviour
     private void OnTriggerEnter(Collider o)
     {
         if (o.gameObject.CompareTag("Item")){
-            Instantiate(particulaItem, o.gameObject.transform.position, Quaternion.identity);
+        
+            GameObject particle = Instantiate(particulaItem, o.gameObject.transform.position, Quaternion.identity);
+            GameObject popUp = Instantiate(popUpScore, o.gameObject.transform.position, Quaternion.identity);
             Destroy(o.gameObject);
-            pontos++;
-            txtPontos.text = "Pontos: " + pontos.ToString();
+            Destroy(particle, 0.5f);
+            Destroy(popUp, 1.5f);
 
-            if (pontos >= 3 && pontos <= 5){
-                podeganhar = true;
-                Debug.Log("Pode Ganhar");
-            }else{
-                podeganhar = false;
-                Debug.Log("Não pode ganhar ainda");
-            }
+            score.GetComponent<Score>().atualizarScore();
         }
     }
 
