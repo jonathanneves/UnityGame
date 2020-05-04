@@ -57,11 +57,17 @@ public class Ball_Movement : MonoBehaviour
     void Jump()
     {
         myRigidbody.AddForce(Vector3.up * jumpPower * Time.fixedDeltaTime, ForceMode.Impulse);
+
+
+
+        FindObjectOfType<AudioManager>().BallJump();
+
+
     }
 
     private void OnTriggerEnter(Collider o)
     {
-        if (o.gameObject.CompareTag("Item")){
+        if (o.gameObject.CompareTag("Food")){
         
             GameObject particle = Instantiate(particulaItem, o.gameObject.transform.position, Quaternion.identity);
             GameObject popUp = Instantiate(popUpScore, o.gameObject.transform.position, Quaternion.identity);
@@ -70,6 +76,16 @@ public class Ball_Movement : MonoBehaviour
             Destroy(popUp, 1.5f);
 
             score.GetComponent<Score>().atualizarScore();
+        }
+        else if (o.gameObject.CompareTag("Bad Food")) {
+
+            GameObject particle = Instantiate(particulaItem, o.gameObject.transform.position, Quaternion.identity);
+            GameObject popUp = Instantiate(popUpScore, o.gameObject.transform.position, Quaternion.identity);
+            Destroy(o.gameObject);
+            Destroy(particle, 0.5f);
+            Destroy(popUp, 1.5f);
+
+            //score.GetComponent<Score>().atualizarScore();
         }
     }
 
