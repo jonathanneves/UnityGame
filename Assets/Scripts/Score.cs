@@ -8,12 +8,12 @@ public class Score : MonoBehaviour
     private TextMesh scoreText;
     private int maxScore;
     private int currentScore = 0;
-    public bool podeganhar = false;
+    [HideInInspector] public bool podeganhar = false;
 
     void Start()
     {
         scoreText = GameObject.Find("Pontos").GetComponent<TextMesh>();
-        maxScore = GameObject.Find("Food").GetComponent<Transform>().childCount;
+        maxScore = GameObject.Find("Good Food").GetComponent<Transform>().childCount;
         scoreText.text = currentScore+"/"+maxScore;
     }
 
