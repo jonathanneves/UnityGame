@@ -5,41 +5,44 @@ using UnityEngine;
 public class Ball2TEST : MonoBehaviour
 {
 
+    CharacterController Controller;
+
     public float Speed;
-    Rigidbody myRigidbody;
 
+    public Transform Cam;
 
-    void Start()
-    {
-        myRigidbody = GetComponent<Rigidbody>();
-    }
 
     // Start is called before the first frame update
-    void FixedUpdate()
-    {
-        PlayerMovement();
+    void Start() {
+
+        Controller = GetComponent<CharacterController>();
+
     }
 
     // Update is called once per frame
-    void PlayerMovement()
-    {
+    void Update() {
 
-        float hor = Input.GetAxisRaw("Horizontal");
-        float ver = Input.GetAxisRaw("Vertical");
-        Vector3 playerMoviment = new Vector3(hor, 0f, ver) * Speed * Time.deltaTime;
-        transform.Translate(playerMoviment, Space.Self);
+        float Horizontal = Input.GetAxis("Horizontal") * Speed * Time.deltaTime;
+        float Vertical = Input.GetAxis("Vertical") * Speed * Time.deltaTime;
 
-        //myRigidbody.MovePosition(Speed * 1f * Time.deltaTime);
-        // I tried my best to explain this in my answer
-        //cam.transform.localRotation = Quaternion.Euler(-mouseLook.y, mouseLook.x, 0f);
-        //myRigidbody.MoveRotation(Quaternion.Euler(cam.transform.localRotation.eulerAngles));
+        Vector3 Movement = Cam.transform.right * Horizontal + Cam.transform.forward * Vertical;
+        Movement.y = 0f;
 
 
-        //myRigidbody.AddForce(hor * Speed * Time.fixedDeltaTime, 0f, ver * Speed * Time.fixedDeltaTime);
-        //myRigidbody.AddForce(hor * Speed * Time.fixedDeltaTime, 0f, ver * Speed * Time.fixedDeltaTime);
-        //myRigidbody.interpolation = RigidbodyInterpolation.Interpolate;
 
-        //Vector3 newPosition = myRigidbody.position + transform.TransformDirection(localPositionOffset);
-        //myRigidbody.MovePosition(newPosition);
+        Controller.Move(Movement);
+
+        if (Movement.magnitude != 0f) {
+            transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * 10f * Time.deltaTime);
+
+
+            Quaternion CamRotation = Cam.rotation;
+            CamRotation.x = 0f;
+            CamRotation.z = 0f;
+
+            transform.rotation = Quaternion.Lerp(transform.rotation, CamRotation, 0.1f);
+
+        }
     }
+
 }
