@@ -7,8 +7,12 @@ using UnityEngine.SceneManagement;
 public class Health_Controller : MonoBehaviour
 {
     private int health = 3;
-    public Image imageUI;
+    private Image imageUI;
     public Sprite[] healthBar;
+
+    void Awake(){
+        imageUI = GameObject.Find("HP").GetComponent<Image>();
+    }
 
     public void tomouDano(){
         imageUI.sprite = healthBar[health];

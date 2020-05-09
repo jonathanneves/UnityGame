@@ -1,0 +1,16 @@
+Thank you for using my asset. Below are some instruction of setting things up:
+1. Create a new material:
+- Create a new material in the Project window then select one of these 3 shaders:
+ . Pinwheel/OcculdedHighlight: only draw the occluded part of an object
+ . Pinwheel/StandardOccludedHighlight: draw both visible and occluded part of an object, with standard shader workflow
+ . Pinwheel/StandardSpecularOccludedHighlight: draw both visible and occluded part of an object, with standard specular shader workflow
+
+2. Parameters:
+Occluded Highlight section
+- Highlight Color: determine its pattern texture and tint color
+- Tiling/Offset: pattern tiling/offset
+- Threshold: thickness of the silhoulette
+- Mode: choose between Smooth and Sharp highlight mode
+
+Other sections:
+- Other parameters work the same way Unity Standard shader do. Please take a look at Unity official documentation for detail.
