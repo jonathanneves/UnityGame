@@ -9,14 +9,20 @@ public class MenuManager : MonoBehaviour
     public Transform pivot;
     public Sprite[] currentAudio;
     private Image audioUI;
+    private AudioSource bgSound;
     bool estaMutado = false;
 
-    void Start(){
+    void Awake(){
         audioUI = GameObject.Find("Mute").GetComponent<Image>();
+        bgSound = GameObject.Find("Music").GetComponent<AudioSource>();
     }
 
     public void startGame(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        int currentLevel = PlayerPrefs.GetInt("Fase");
+        if (currentLevel == 0)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        else
+            SceneManager.LoadScene(PlayerPrefs.GetInt("Fase"));
     }
 
     public void sair(){
@@ -39,9 +45,11 @@ public class MenuManager : MonoBehaviour
         estaMutado = !estaMutado;
         if (!estaMutado) {
             audioUI.sprite = currentAudio[0];
+            bgSound.Play();
         }
         else {
             audioUI.sprite = currentAudio[1];
+            bgSound.Stop();
         }
     }
 }

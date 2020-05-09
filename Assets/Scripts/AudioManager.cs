@@ -6,6 +6,18 @@ public class AudioManager : MonoBehaviour
 {
     AudioSource audioFX;
     public AudioClip[] audios;
+    private static AudioManager instance = null;
+
+    void Awake()
+    {
+        if(instance != null && instance != this){
+            Destroy(this.gameObject);
+            return;
+        } else {
+            instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     void Start()
     {

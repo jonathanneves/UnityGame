@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     bool estaPausado = false;
     bool estaMutado = false;
+    private AudioSource bgSound;
     public GameObject pause;
     public Image audioUI;
     private Text scoreText;
@@ -17,6 +18,11 @@ public class GameManager : MonoBehaviour
     void Awake(){
         healthUI = GameObject.Find("HP").GetComponent<Image>();
         scoreText = GameObject.Find("Score").GetComponent<Text>();
+        bgSound = GameObject.Find("Music").GetComponent<AudioSource>();
+    }
+
+    void Start(){
+        PlayerPrefs.SetInt("Fase", SceneManager.GetActiveScene().buildIndex);
     }
 
     void Update()
@@ -39,14 +45,25 @@ public class GameManager : MonoBehaviour
         estaMutado = !estaMutado;
         if (!estaMutado) {
             audioUI.sprite = currentAudio[0];
+            bgSound.Play();
         }
         else {
             audioUI.sprite = currentAudio[1];
+            bgSound.Stop();
         }
     }
 
     public void exit(){
+        PlayerPrefs.SetInt("Fase", SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene("Menu");
+    }
+
+    public void restart(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void nextLevel(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
     void pausar(){

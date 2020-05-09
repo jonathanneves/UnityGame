@@ -9,7 +9,7 @@ public class ButtonFX : MonoBehaviour
     public AudioClip clickFx;
 
     void Awake(){
-        myFx = GameObject.Find("AudioManager").GetComponent<AudioSource>();
+        myFx = GameObject.Find("Audio Effect").GetComponent<AudioSource>();
     }
 
     public void HoverSound() {
