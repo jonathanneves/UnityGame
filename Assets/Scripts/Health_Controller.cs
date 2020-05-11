@@ -9,9 +9,12 @@ public class Health_Controller : MonoBehaviour
     private int health = 3;
     private Image imageUI;
     public Sprite[] healthBar;
+    public GameObject panel;
+    private GameObject player;
 
     void Awake(){
         imageUI = GameObject.Find("HP").GetComponent<Image>();
+        player = GameObject.Find("Player");
     }
 
     public void tomouDano(){
@@ -22,22 +25,24 @@ public class Health_Controller : MonoBehaviour
     IEnumerator animacaoUI(){
         imageUI.enabled = true;
         imageUI.sprite = healthBar[health];
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(0.5f);
         health--;
         imageUI.sprite = healthBar[health];
-        yield return new WaitForSeconds(2.5f);
+        if (health == 0) {
+            gameOver();
+        }
+        yield return new WaitForSeconds(2f);
         imageUI.enabled = false;
     }
 
-
-    void Update()
-    {
-        if(health == 0 && imageUI.IsActive()){
-            gameOver();
-        }
-    }
-
     void gameOver(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Destroy(player, 0.2f);
+        panel.SetActive(true);
+        Time.timeScale = 0f;
     }
+
+    public int getHealth(){
+        return health;
+    }
+
 }

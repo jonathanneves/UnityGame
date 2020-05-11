@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
+    public Text tipText;
+    public string tipLevel;
     private TextMesh scoreText;
     private Text scoreOnPause;
-    private int maxScore;
+    public int maxScore;
     private int currentScore = 0;
     [HideInInspector] public bool podeganhar = false;
 
@@ -24,12 +26,16 @@ public class Score : MonoBehaviour
         scoreText.text = currentScore + "/" + maxScore;
         scoreOnPause.text = currentScore + "/" + maxScore;
         StartCoroutine("animacaoUI");
-        if (currentScore == maxScore){
+        if (currentScore == maxScore) {
             podeganhar = true;
-            Debug.Log("Pode Ganhar");
-        }else {
-            Debug.Log("Não pode ganhar ainda");
+            StartCoroutine("showTip");
         }
+    }
+
+    IEnumerator showTip() {
+        tipText.text = tipLevel;
+        yield return new WaitForSeconds(3f);
+        tipText.text = "";
     }
 
     IEnumerator animacaoUI() {
