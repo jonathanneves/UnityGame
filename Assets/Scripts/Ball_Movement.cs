@@ -16,12 +16,10 @@ public class Ball_Movement : MonoBehaviour
     Vector3 initPos;
 
     [Header("UI")]
-    public GameObject score;
-    public GameObject particulaItem;
+    public GameObject particulaGood;
+    public GameObject particulaBad;
     public GameObject popUpScore;
     public GameObject popUpHP;
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +44,6 @@ public class Ball_Movement : MonoBehaviour
         {
             if (jumpInput)
                 Jump();
-
         }
     }
 
@@ -68,17 +65,17 @@ public class Ball_Movement : MonoBehaviour
     {
         if (o.gameObject.CompareTag("Good Food")){
         
-            GameObject particle = Instantiate(particulaItem, o.gameObject.transform.position, Quaternion.identity);
+            GameObject particle = Instantiate(particulaGood, o.gameObject.transform.position, Quaternion.identity);
             GameObject popUp = Instantiate(popUpScore, o.gameObject.transform.position, Quaternion.identity);
             Destroy(o.gameObject);
             Destroy(particle, 0.5f);
             Destroy(popUp, 1.5f);
 
-            score.GetComponent<Score>().atualizarScore();
+            FindObjectOfType<Score>().atualizarScore();
         }
         else if (o.gameObject.CompareTag("Bad Food")) {
 
-            GameObject particle = Instantiate(particulaItem, o.gameObject.transform.position, Quaternion.identity);
+            GameObject particle = Instantiate(particulaBad, o.gameObject.transform.position, Quaternion.identity);
             GameObject popUp = Instantiate(popUpHP, o.gameObject.transform.position, Quaternion.identity);
             Destroy(o.gameObject);
             Destroy(particle, 0.5f);

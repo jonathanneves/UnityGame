@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     AudioSource audioFX;
     public AudioClip[] audios;
-    private static AudioManager instance = null;
+    public static AudioManager instance = null;
 
     void Awake()
     {

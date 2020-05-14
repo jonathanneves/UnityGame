@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour
     void Awake(){
         healthUI = GameObject.Find("HP").GetComponent<Image>();
         scoreText = GameObject.Find("Score").GetComponent<Text>();
-        bgSound = GameObject.Find("Music").GetComponent<AudioSource>();
+        if(AudioManager.instance != null)
+            bgSound = GameObject.Find("Music").GetComponent<AudioSource>();
     }
 
     void Start(){
@@ -54,15 +55,18 @@ public class GameManager : MonoBehaviour
     }
 
     public void exit(){
+        Time.timeScale = 1f;
         PlayerPrefs.SetInt("Fase", SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene("Menu");
     }
 
     public void restart(){
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void nextLevel(){
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
