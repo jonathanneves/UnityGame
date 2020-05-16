@@ -7,7 +7,8 @@ public class Win_Controller : MonoBehaviour
 {
     public GameObject particleSucess;
     public GameObject panel;
-    public Text tipText;
+    public Text tipTxt;
+    public Text timeTxt;
 
     private void OnTriggerEnter(Collider o){
 
@@ -15,7 +16,7 @@ public class Win_Controller : MonoBehaviour
 
             if(FindObjectOfType<Score>().podeganhar){
                 Instantiate(particleSucess, o.gameObject.transform.position, Quaternion.identity);
-                Destroy(o);
+                Destroy(o.gameObject);
                 StartCoroutine("vitoria");
             } else {
                 StartCoroutine("showTip");
@@ -25,13 +26,14 @@ public class Win_Controller : MonoBehaviour
 
     IEnumerator vitoria() {
         yield return new WaitForSeconds(2f);
+        timeTxt.text = FindObjectOfType<Timer>().atualizarTempo();
         Time.timeScale = 0f;
         panel.SetActive(true);
     }
 
     IEnumerator showTip(){
-        tipText.text = "Colete todas as "+ FindObjectOfType<Score>().maxScore + " frutas antes";
+        tipTxt.text = "Colete todas as "+ FindObjectOfType<Score>().maxScore + " frutas antes";
         yield return new WaitForSeconds(3f);
-        tipText.text = "";
+        tipTxt.text = "";
     }
 }

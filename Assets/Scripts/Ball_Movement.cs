@@ -12,7 +12,6 @@ public class Ball_Movement : MonoBehaviour
     [SerializeField] float jumpPower = 0f;
     float hInput;
     float vInput;
-    bool jumpInput;
     Vector3 initPos;
 
     [Header("UI")]
@@ -33,7 +32,6 @@ public class Ball_Movement : MonoBehaviour
     {
         hInput = Input.GetAxis("Horizontal") * moveSpeed;
         vInput = Input.GetAxis("Vertical") * moveSpeed;
-        jumpInput = Input.GetKeyDown(KeyCode.Space);
     }
 
     void FixedUpdate()
@@ -42,20 +40,20 @@ public class Ball_Movement : MonoBehaviour
 
         if (Physics.Raycast(transform.position, Vector3.down, 0.6f))
         {
-            if (jumpInput)
+            if (Input.GetKeyDown(KeyCode.Space))
                 Jump();
         }
     }
 
     void Move()
     {
-        //myRigidbody.velocity = new Vector3(hInput * 3f * Time.fixedDeltaTime, myRigidbody.velocity.y, vInput * 3f * Time.fixedDeltaTime);
         myRigidbody.AddForce(hInput * Time.fixedDeltaTime, 0f, vInput * Time.fixedDeltaTime);
     }
 
     void Jump()
     {
-        myRigidbody.AddForce(Vector3.up * jumpPower * Time.fixedDeltaTime, ForceMode.Impulse);
+        myRigidbody.AddForce(0, jumpPower, 0);
+        //myRigidbody.AddForce(Vector3.up * jumpPower * Time.fixedDeltaTime);
 
         FindObjectOfType<AudioManager>().BallJump();
     }
