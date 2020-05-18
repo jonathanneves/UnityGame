@@ -13,6 +13,7 @@ public class Cam_Movement : MonoBehaviour
     }
 
     void Update() {
-        transform.position = player.position + _offset;
+        if(player != null)
+            transform.position = player.position + _offset;
     }
 }
