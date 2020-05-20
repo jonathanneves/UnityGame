@@ -9,13 +9,23 @@ public class GameManager : MonoBehaviour
     bool estaPausado = false;
     bool estaMutado = false;
     private AudioSource bgSound;
-    public GameObject pause;
+
+    //Paineis
+    private GameObject pause;
+    private GameObject winner;
+    private GameObject gameOver;
+
+    //UI 
     public Image audioUI;
     private Text scoreText;
     private Image healthUI;
     public Sprite[] currentAudio;
 
     void Awake(){
+        pause = GameObject.Find("Pause");
+        pause.SetActive(false);
+        GameObject.Find("Winner").SetActive(false);
+        GameObject.Find("GameOver").SetActive(false);
         healthUI = GameObject.Find("HP").GetComponent<Image>();
         scoreText = GameObject.Find("Score").GetComponent<Text>();
         if(AudioManager.instance != null)

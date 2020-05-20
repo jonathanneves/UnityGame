@@ -1,0 +1,409 @@
+fileFormatVersion: 2
+guid: e13efe126b573cb4490c92214cfb30b3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4310481250098440256
+    second: bolas_0
+  - first:
+      213: -1501257142785971082
+    second: bolas_1
+  - first:
+      213: 1127694064379358333
+    second: bolas_2
+  - first:
+      213: 8476711001309354564
+    second: bolas_3
+  - first:
+      213: 2666927484314551184
+    second: bolas_4
+  - first:
+      213: -6751272702422918645
+    second: bolas_5
+  - first:
+      213: -9022069463406099099
+    second: bolas_6
+  - first:
+      213: 8785584013246365076
+    second: bolas_7
+  - first:
+      213: -2168343331573806101
+    second: bolas_8
+  - first:
+      213: -1029046987813335025
+    second: bolas_9
+  - first:
+      213: 6220116965598447783
+    second: bolas_10
+  - first:
+      213: -5344517563045246993
+    second: bolas_11
+  - first:
+      213: -8345825924682907301
+    second: bolas_12
+  - first:
+      213: -5192701320676537284
+    second: bolas_13
+  - first:
+      213: -1198730671064008627
+    second: bolas_14
+  - first:
+      213: 866296795557505085
+    second: bolas_15
+  - first:
+      213: 8826809718761007226
+    second: bolas_16
+  - first:
+      213: 6102954626329583226
+    second: bolas_17
+  - first:
+      213: -4430884583577090927
+    second: bolas_18
+  - first:
+      213: -1648151250904930535
+    second: bolas_19
+  - first:
+      213: 1066278960761170744
+    second: bolas_20
+  - first:
+      213: -2115125576691472225
+    second: bolas_21
+  - first:
+      213: 2338007066150799405
+    second: bolas_22
+  - first:
+      213: -273894426162643617
+    second: bolas_23
+  - first:
+      213: 1534929651848486554
+    second: bolas_24
+  - first:
+      213: 5067141401303317064
+    second: bolas_25
+  - first:
+      213: -346482696308820410
+    second: bolas_26
+  - first:
+      213: -4956305535888201515
+    second: bolas_27
+  - first:
+      213: 2235913214565101651
+    second: bolas_28
+  - first:
+      213: -133354391121919729
+    second: bolas_29
+  - first:
+      213: 5850610991269989729
+    second: bolas_30
+  - first:
+      213: -2797409176025498787
+    second: bolas_31
+  - first:
+      213: 9115098153886770116
+    second: bolas_32
+  - first:
+      213: 7655825471820829703
+    second: bolas_33
+  - first:
+      213: 7991461617551593746
+    second: bolas_34
+  - first:
+      213: -3294261816855279457
+    second: bolas_35
+  - first:
+      213: -4381281804791434027
+    second: bolas_36
+  - first:
+      213: 8610979035771736794
+    second: bolas_37
+  - first:
+      213: -4073874460002361846
+    second: bolas_38
+  - first:
+      213: 3108091093344967153
+    second: bolas_39
+  - first:
+      213: -4561545778958435710
+    second: bolas_40
+  - first:
+      213: -6430340115966614514
+    second: bolas_41
+  - first:
+      213: -8881544967441569876
+    second: bolas_42
+  - first:
+      213: -2521410351004599308
+    second: bolas_43
+  - first:
+      213: 5226348701379621133
+    second: bolas_44
+  - first:
+      213: -7555389401542561968
+    second: bolas_45
+  - first:
+      213: -5397880760190539108
+    second: bolas_46
+  - first:
+      213: -1410070243024360406
+    second: bolas_47
+  - first:
+      213: 6419493023711295741
+    second: bolas_48
+  - first:
+      213: 2923026701999994316
+    second: bolas_49
+  - first:
+      213: -7073736207530414534
+    second: bolas_50
+  - first:
+      213: 1357620991832840681
+    second: bolas_51
+  - first:
+      213: 1005591396127755169
+    second: bolas_52
+  - first:
+      213: 6582844102108666252
+    second: bolas_53
+  - first:
+      213: -3326525745050446919
+    second: bolas_54
+  - first:
+      213: -3747689137735649984
+    second: bolas_55
+  - first:
+      213: -1009531053465460766
+    second: bolas_56
+  - first:
+      213: -6070133093471279030
+    second: bolas_57
+  - first:
+      213: 4969586820455910666
+    second: bolas_58
+  - first:
+      213: -9059286678758963557
+    second: bolas_59
+  - first:
+      213: 8289156971878939686
+    second: bolas_60
+  - first:
+      213: 2171616662501658407
+    second: bolas_61
+  - first:
+      213: 862766859318650190
+    second: bolas_62
+  - first:
+      213: 2853629017696488327
+    second: bolas_63
+  - first:
+      213: -213820722371138745
+    second: bolas_64
+  - first:
+      213: 2210108136949485951
+    second: bolas_65
+  - first:
+      213: -969894692251515806
+    second: bolas_66
+  - first:
+      213: 8264690270374905219
+    second: bolas_67
+  - first:
+      213: -2416191904310146968
+    second: bolas_68
+  - first:
+      213: -4308162199303279592
+    second: bolas_69
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bolas_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 361
+        width: 218
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 048691bebd7e1db30800000000000000
+      internalID: 4310481250098440256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bolas_1
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 358
+        width: 218
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c69b725967a2be0800000000000000
+      internalID: -1501257142785971082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bolas_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 49
+        width: 214
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ce5aad6cf56af00800000000000000
+      internalID: 1127694064379358333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bolas_3
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 59
+        width: 246
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a90b08eb353a570800000000000000
+      internalID: 8476711001309354564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
