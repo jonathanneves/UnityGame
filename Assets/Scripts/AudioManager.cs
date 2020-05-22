@@ -28,4 +28,21 @@ public class AudioManager : MonoBehaviour
     {
         audioFX.PlayOneShot(audios[0],0.5f);
     }
+
+    public void CollectFruit(){
+        audioFX.PlayOneShot(audios[1], 0.7f);
+    }
+
+    public void CollectJunk() {
+        audioFX.PlayOneShot(audios[2], 0.7f);
+    }
+
+    public void PlayVictory() {
+        audioFX.PlayOneShot(audios[3]);
+    }
+
+    public void PlayGameOver() {
+        audioFX.PlayOneShot(audios[4]);
+    }
+
 }

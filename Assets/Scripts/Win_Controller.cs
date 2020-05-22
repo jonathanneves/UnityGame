@@ -25,6 +25,7 @@ public class Win_Controller : MonoBehaviour
     }
 
     IEnumerator vitoria() {
+        AudioManager.instance.PlayVictory();
         yield return new WaitForSeconds(2f);
         timeTxt.text = FindObjectOfType<Timer>().atualizarTempo();
         Time.timeScale = 0f;
@@ -32,7 +33,7 @@ public class Win_Controller : MonoBehaviour
     }
 
     IEnumerator showTip(){
-        tipTxt.text = "Colete todas as "+ FindObjectOfType<Score>().maxScore + " frutas antes";
+        tipTxt.text = "Colete todas as "+ FindObjectOfType<Score>().maxScore + " frutas antes!";
         yield return new WaitForSeconds(3f);
         tipTxt.text = "";
     }

@@ -53,16 +53,16 @@ public class Ball_Movement : MonoBehaviour
     void Jump()
     {
         myRigidbody.AddForce(0, jumpPower, 0);
-        //myRigidbody.AddForce(Vector3.up * jumpPower * Time.fixedDeltaTime);
-
-        FindObjectOfType<AudioManager>().BallJump();
+        //FindObjectOfType<AudioManager>().BallJump();
+        AudioManager.instance.BallJump();
     }
 
 
     private void OnTriggerEnter(Collider o)
     {
         if (o.gameObject.CompareTag("Good Food")){
-        
+
+            AudioManager.instance.CollectFruit();
             GameObject particle = Instantiate(particulaGood, o.gameObject.transform.position, Quaternion.identity);
             GameObject popUp = Instantiate(popUpScore, o.gameObject.transform.position, Quaternion.identity);
             Destroy(o.gameObject);
@@ -73,6 +73,7 @@ public class Ball_Movement : MonoBehaviour
         }
         else if (o.gameObject.CompareTag("Bad Food")) {
 
+            AudioManager.instance.CollectJunk();
             GameObject particle = Instantiate(particulaBad, o.gameObject.transform.position, Quaternion.identity);
             GameObject popUp = Instantiate(popUpHP, o.gameObject.transform.position, Quaternion.identity);
             Destroy(o.gameObject);
