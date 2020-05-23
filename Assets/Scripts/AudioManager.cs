@@ -26,15 +26,15 @@ public class AudioManager : MonoBehaviour
 
     public void BallJump()
     {
-        audioFX.PlayOneShot(audios[0],0.5f);
+        audioFX.PlayOneShot(audios[0],0.55f);
     }
 
     public void CollectFruit(){
-        audioFX.PlayOneShot(audios[1], 0.7f);
+        audioFX.PlayOneShot(audios[1], 0.75f);
     }
 
     public void CollectJunk() {
-        audioFX.PlayOneShot(audios[2], 0.7f);
+        audioFX.PlayOneShot(audios[2], 0.85f);
     }
 
     public void PlayVictory() {

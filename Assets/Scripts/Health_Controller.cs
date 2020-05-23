@@ -37,6 +37,7 @@ public class Health_Controller : MonoBehaviour
 
     void gameOver(){
         AudioManager.instance.PlayGameOver();
+        GameObject.Find("Score").GetComponent<Image>().enabled = false;
         Destroy(player, 0.2f);
         panel.SetActive(true);
         Time.timeScale = 0f;
