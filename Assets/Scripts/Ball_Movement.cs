@@ -32,17 +32,17 @@ public class Ball_Movement : MonoBehaviour
     {
         hInput = Input.GetAxis("Horizontal") * moveSpeed;
         vInput = Input.GetAxis("Vertical") * moveSpeed;
+
+        if (Physics.Raycast(transform.position, Vector3.down, 1f)) {
+            if (Input.GetKey(KeyCode.Space)){
+                Jump();
+            }
+        }
     }
 
     void FixedUpdate()
     {
         Move();
-
-        if (Physics.Raycast(transform.position, Vector3.down, 0.7f))
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-                Jump();
-        }
     }
 
     void Move()
@@ -53,7 +53,6 @@ public class Ball_Movement : MonoBehaviour
     void Jump()
     {
         myRigidbody.AddForce(0, jumpPower, 0);
-        //FindObjectOfType<AudioManager>().BallJump();
         AudioManager.instance.BallJump();
     }
 
