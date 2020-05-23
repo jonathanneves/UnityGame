@@ -38,7 +38,7 @@ public class Ball_Movement : MonoBehaviour
     {
         Move();
 
-        if (Physics.Raycast(transform.position, Vector3.down, 0.6f))
+        if (Physics.Raycast(transform.position, Vector3.down, 0.7f))
         {
             if (Input.GetKeyDown(KeyCode.Space))
                 Jump();

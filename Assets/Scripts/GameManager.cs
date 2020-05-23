@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         scoreText = GameObject.Find("Score").GetComponent<Text>();
         if(AudioManager.instance != null)
             bgSound = GameObject.Find("Music").GetComponent<AudioSource>();
+        Time.timeScale = 1f;
     }
 
     void Update()
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void resume(){
+        Time.timeScale = 1f;
         estaPausado = false;
         pause.SetActive(false);
     }
@@ -71,11 +73,11 @@ public class GameManager : MonoBehaviour
     }
 
     public void nextLevel(){
-        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
     void pausar(){
+        Time.timeScale = 0f;
         estaPausado = true;
         pause.SetActive(true);
         scoreText.enabled = true;
@@ -83,6 +85,7 @@ public class GameManager : MonoBehaviour
     }
 
     void despausar(){
+        Time.timeScale = 1f;
         estaPausado = false;
         pause.SetActive(false);
         scoreText.enabled = false;
