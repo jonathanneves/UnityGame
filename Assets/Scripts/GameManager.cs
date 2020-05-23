@@ -32,10 +32,6 @@ public class GameManager : MonoBehaviour
             bgSound = GameObject.Find("Music").GetComponent<AudioSource>();
     }
 
-    void Start(){
-        PlayerPrefs.SetInt("Fase", SceneManager.GetActiveScene().buildIndex);
-    }
-
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)){
@@ -66,7 +62,6 @@ public class GameManager : MonoBehaviour
 
     public void exit(){
         Time.timeScale = 1f;
-        PlayerPrefs.SetInt("Fase", SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene("Menu");
     }
 

@@ -18,12 +18,7 @@ public class MenuManager : MonoBehaviour
     }
 
     public void startGame(){
-        int currentLevel = PlayerPrefs.GetInt("Fase");
-        //int currentLevel = 0;
-        if (currentLevel == 0)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
-        else
-            SceneManager.LoadScene(PlayerPrefs.GetInt("Fase"));
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
     public void sair(){

@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class FinalManager : MonoBehaviour
 {
     public void voltar(){
-        PlayerPrefs.SetInt("Fase", 1);
         SceneManager.LoadScene("Menu");
     }
 }

@@ -25,7 +25,7 @@ public class Health_Controller : MonoBehaviour
     IEnumerator animacaoUI(){
         imageUI.enabled = true;
         imageUI.sprite = healthBar[health];
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         health--;
         imageUI.sprite = healthBar[health];
         if (health == 0) {
@@ -36,6 +36,7 @@ public class Health_Controller : MonoBehaviour
     }
 
     void gameOver(){
+        AudioManager.instance.PlayGameOver();
         Destroy(player, 0.2f);
         panel.SetActive(true);
         Time.timeScale = 0f;

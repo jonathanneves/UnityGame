@@ -7,7 +7,7 @@ public class Fall : MonoBehaviour
     private void OnTriggerEnter(Collider o){
         if (o.CompareTag("Player")){
             FindObjectOfType<Health_Controller>().tomouDano();
-            AudioManager.instance.PlayGameOver();
+            AudioManager.instance.CollectJunk();
             o.GetComponent<Ball_Movement>().resetPos();
         }
     }
