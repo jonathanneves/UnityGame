@@ -18,7 +18,7 @@ public class MenuManager : MonoBehaviour
     }
 
     public void startGame(){
-         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+2);
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
     public void sair(){
