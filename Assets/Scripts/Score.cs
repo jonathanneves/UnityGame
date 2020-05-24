@@ -10,7 +10,7 @@ public class Score : MonoBehaviour
     private TextMesh scoreText;
     private Text scoreOnPause;
     public int maxScore;
-    private int currentScore = -1;
+    private int currentScore = 0;
     [HideInInspector] public bool podeganhar = false;
 
     void Awake()

@@ -33,11 +33,8 @@ public class Ball_Movement : MonoBehaviour
         hInput = Input.GetAxis("Horizontal") * moveSpeed;
         vInput = Input.GetAxis("Vertical") * moveSpeed;
 
-        if (Physics.Raycast(transform.position, Vector3.down, 1f)) {
-            if (Input.GetKey(KeyCode.Space)){
-                Jump();
-            }
-        }
+        if (Physics.Raycast(transform.position, Vector3.down, 1f) && Input.GetKeyUp(KeyCode.Space)) 
+            Jump();             
     }
 
     void FixedUpdate()

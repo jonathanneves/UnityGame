@@ -14,7 +14,7 @@ public class Health_Controller : MonoBehaviour
 
     void Awake(){
         imageUI = GameObject.Find("HP").GetComponent<Image>();
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void tomouDano(){
@@ -29,15 +29,18 @@ public class Health_Controller : MonoBehaviour
         health--;
         imageUI.sprite = healthBar[health];
         if (health == 0) {
+            yield return new WaitForSeconds(0.2f);
             gameOver();
+        } else {
+            yield return new WaitForSeconds(2f);
+            imageUI.enabled = false;
         }
-        yield return new WaitForSeconds(2f);
-        imageUI.enabled = false;
     }
 
     void gameOver(){
         AudioManager.instance.PlayGameOver();
-        GameObject.Find("Score").GetComponent<Image>().enabled = false;
+        imageUI.enabled = false;
+        GameObject.Find("Score").GetComponent<Text>().enabled = false;
         Destroy(player, 0.2f);
         panel.SetActive(true);
         Time.timeScale = 0f;
