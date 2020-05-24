@@ -28,7 +28,6 @@ public class Win_Controller : MonoBehaviour
         AudioManager.instance.PlayVictory();
         yield return new WaitForSeconds(2f);
         timeTxt.text = FindObjectOfType<Timer>().atualizarTempo();
-        Time.timeScale = 0f;
         panel.SetActive(true);
     }
 
