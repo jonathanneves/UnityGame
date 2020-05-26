@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
 
@@ -19,6 +20,9 @@ public class Timer : MonoBehaviour {
     }
 
     public string atualizarTempo(){
+        PlayerPrefs.SetString(SceneManager.GetActiveScene().name, varTime);
        return "Seu tempo: "+ varTime;
     }
+
+    
 }

@@ -34,7 +34,7 @@ public class MenuManager : MonoBehaviour
     }
 
     public void voltar(){
-        pivot.localPosition = new Vector3(0, 0f, 0f);
+        pivot.localPosition = new Vector3(0f, 0f, 0f);
     }
 
     public void mute() {
