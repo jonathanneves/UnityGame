@@ -69,8 +69,13 @@ public class GameManager : MonoBehaviour
     }
 
     public void nextLevel(){
+        StartCoroutine("LoadingScene");
+    }
+
+    IEnumerator LoadingScene(){
         loading.SetActive(true);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        yield return new WaitForSeconds(0.25f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     void pausar(){

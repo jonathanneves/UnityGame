@@ -58,27 +58,24 @@ public class Ball_Movement : MonoBehaviour
 
     private void OnTriggerEnter(Collider o)
     {
-        if (o.gameObject.CompareTag("Good Food")){
-
+        if (o.gameObject.CompareTag("Good Food")){   
             AudioManager.instance.CollectFruit();
-            GameObject particle = Instantiate(particulaGood, o.gameObject.transform.position, Quaternion.identity);
-            GameObject popUp = Instantiate(popUpScore, o.gameObject.transform.position, Quaternion.identity);
-            Destroy(o.gameObject);
-            Destroy(particle, 0.5f);
-            Destroy(popUp, 1.5f);
-
+            ativarParticula(o.gameObject, particulaGood, popUpScore);
             FindObjectOfType<Score>().atualizarScore();
         }
         else if (o.gameObject.CompareTag("Bad Food")) {
-
             AudioManager.instance.CollectJunk();
-            GameObject particle = Instantiate(particulaBad, o.gameObject.transform.position, Quaternion.identity);
-            GameObject popUp = Instantiate(popUpHP, o.gameObject.transform.position, Quaternion.identity);
-            Destroy(o.gameObject);
-            Destroy(particle, 0.5f);
-            Destroy(popUp, 1.5f);
+            ativarParticula(o.gameObject, particulaBad, popUpHP);
             FindObjectOfType<Health_Controller>().tomouDano();
         }
+    }
+
+    void ativarParticula(GameObject go, GameObject particule, GameObject popUP){
+        GameObject particle = Instantiate(particule, go.transform.position, Quaternion.identity);
+        GameObject popUp = Instantiate(popUpScore, go.transform.position, Quaternion.identity);
+        Destroy(go);
+        Destroy(particle, 0.5f);
+        Destroy(popUp, 1.5f);
     }
 
     public void resetPos(){
