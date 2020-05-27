@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject pause;
     public GameObject winner;
     public GameObject gameOver;
+    public GameObject loading;
 
     //UI 
     public Image audioUI;
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void nextLevel(){
+        loading.SetActive(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
