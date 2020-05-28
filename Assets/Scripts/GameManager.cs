@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         estaPausado = false;
         pause.SetActive(false);
+        scoreText.enabled = false;
+        healthUI.enabled = false;
     }
 
     public void mute() {
