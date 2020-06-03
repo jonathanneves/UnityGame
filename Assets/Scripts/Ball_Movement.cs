@@ -70,12 +70,12 @@ public class Ball_Movement : MonoBehaviour
         }
     }
 
-    void ativarParticula(GameObject go, GameObject particule, GameObject popUP){
-        GameObject particle = Instantiate(particule, go.transform.position, Quaternion.identity);
-        GameObject popUp = Instantiate(popUpScore, go.transform.position, Quaternion.identity);
+    void ativarParticula(GameObject go, GameObject particle, GameObject popUp){
+        GameObject goParticle = Instantiate(particle, go.transform.position, Quaternion.identity);
+        GameObject goPopUp = Instantiate(popUp, go.transform.position, Quaternion.identity);
         Destroy(go);
-        Destroy(particle, 0.5f);
-        Destroy(popUp, 1.5f);
+        Destroy(goParticle, 0.5f);
+        Destroy(goPopUp, 1.5f);
     }
 
     public void resetPos(){
