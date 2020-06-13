@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Ball_Movement : MonoBehaviour
 {
 
-
+    public Transform cameraTransform;
     Rigidbody myRigidbody;
     [SerializeField] float moveSpeed = 0f;
     [SerializeField] float jumpPower = 0f;
@@ -30,8 +30,8 @@ public class Ball_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hInput = Input.GetAxis("Horizontal") * moveSpeed;
-        vInput = Input.GetAxis("Vertical") * moveSpeed;
+        hInput = Input.GetAxis("Horizontal");
+        vInput = Input.GetAxis("Vertical");
 
         if(Input.GetKeyDown(KeyCode.Space)) {
             if (Physics.Raycast(transform.position, Vector3.down, 0.7f))
@@ -46,7 +46,14 @@ public class Ball_Movement : MonoBehaviour
 
     void Move()
     {
-        myRigidbody.AddForce(hInput * Time.fixedDeltaTime, 0f, vInput * Time.fixedDeltaTime);
+        Vector3 forward = cameraTransform.forward;
+        Vector3 right = cameraTransform.right;
+        forward.y = 0;
+        right.y = 0;
+        forward.Normalize();
+        right.Normalize();
+        Vector3 direction = forward * vInput + right * hInput;
+        myRigidbody.AddForce(direction * moveSpeed);
     }
 
     void Jump()

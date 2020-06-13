@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Cam_Movement : MonoBehaviour
 {
-
+    public float turnSpeed = 4.0f;  
     public Transform player;
-    private Vector3 _offset;
-
-    void Start() {
-        _offset = transform.position - player.position;
+    private Vector3 offset;
+  
+    void Start () {
+        offset = transform.position - player.position;
     }
 
-    void Update() {
-        if(player != null)
-            transform.position = player.position + _offset;
+    void LateUpdate()
+    {
+        offset = Quaternion.AngleAxis (Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset;
+        transform.position = player.position + offset; 
+        transform.LookAt(player.position);
     }
 }
