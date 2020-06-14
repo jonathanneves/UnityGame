@@ -63,7 +63,7 @@ public class Ball_Movement : MonoBehaviour
         GameObject dust = Instantiate(dustParticle, transform.position, Quaternion.identity);
         AudioManager.instance.BallJump();
         myRigidbody.AddForce(0, jumpPower, 0);
-        Destroy(dust, 1.5f);
+        Destroy(dust, 1f);
     }
 
 
