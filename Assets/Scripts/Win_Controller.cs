@@ -29,6 +29,7 @@ public class Win_Controller : MonoBehaviour
         yield return new WaitForSeconds(2f);
         timeTxt.text = FindObjectOfType<Timer>().atualizarTempo();
         panel.SetActive(true);
+        Cursor.visible = true;
     }
 
     IEnumerator showTip(){

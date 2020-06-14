@@ -40,12 +40,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void resume(){
+    public void despausar(){
         Time.timeScale = 1f;
         estaPausado = false;
         pause.SetActive(false);
         scoreText.enabled = false;
         healthUI.enabled = false;
+        Cursor.visible = false;
     }
 
     public void mute() {
@@ -66,7 +67,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void restart(){
-        Time.timeScale = 1f;
+        Time.timeScale = 1f;       
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -84,16 +85,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         estaPausado = true;
         pause.SetActive(true);
+        Cursor.visible = true;
         scoreText.enabled = true;
         healthUI.enabled = true;
     }
-
-    void despausar(){
-        Time.timeScale = 1f;
-        estaPausado = false;
-        pause.SetActive(false);
-        scoreText.enabled = false;
-        healthUI.enabled = false;
-    }
-
 }

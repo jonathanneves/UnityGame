@@ -16,6 +16,7 @@ public class FinalManager : MonoBehaviour
         varTime += PlayerPrefs.GetString("Football Scene");
         tempos.text = varTime;
         AudioManager.instance.PlayVictory();
+        Cursor.visible = true;
     }
 
     public void voltar(){

@@ -43,6 +43,7 @@ public class Health_Controller : MonoBehaviour
         GameObject.Find("Score").GetComponent<Text>().enabled = false;
         Destroy(player, 0.2f);
         panel.SetActive(true);
+        Cursor.visible = true;
         Time.timeScale = 0f;
     }
 

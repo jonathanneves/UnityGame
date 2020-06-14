@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Ball_Movement : MonoBehaviour
 {
 
-    public Transform cameraTransform;
+    public Transform camTransform;
     Rigidbody myRigidbody;
     [SerializeField] float moveSpeed = 0f;
     [SerializeField] float jumpPower = 0f;
@@ -19,10 +19,12 @@ public class Ball_Movement : MonoBehaviour
     public GameObject particulaBad;
     public GameObject popUpScore;
     public GameObject popUpHP;
+    public GameObject dustParticle;
 
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
         initPos = this.transform.position;
         myRigidbody = GetComponent<Rigidbody>();
     }
@@ -46,20 +48,22 @@ public class Ball_Movement : MonoBehaviour
 
     void Move()
     {
-        Vector3 forward = cameraTransform.forward;
-        Vector3 right = cameraTransform.right;
+        Vector3 forward = camTransform.forward;
+        Vector3 right = camTransform.right;
         forward.y = 0;
         right.y = 0;
         forward.Normalize();
         right.Normalize();
         Vector3 direction = forward * vInput + right * hInput;
-        myRigidbody.AddForce(direction * moveSpeed);
+        myRigidbody.AddForce(direction * moveSpeed * Time.deltaTime);
     }
 
     void Jump()
     {
-        myRigidbody.AddForce(0, jumpPower, 0);
+        GameObject dust = Instantiate(dustParticle, transform.position, Quaternion.identity);
         AudioManager.instance.BallJump();
+        myRigidbody.AddForce(0, jumpPower, 0);
+        Destroy(dust, 1.5f);
     }
 
 
@@ -81,8 +85,7 @@ public class Ball_Movement : MonoBehaviour
         GameObject goParticle = Instantiate(particle, go.transform.position, Quaternion.identity);
         GameObject goPopUp = Instantiate(popUp, go.transform.position, Quaternion.identity);
         Destroy(go);
-        Destroy(goParticle, 0.5f);
-        Destroy(goPopUp, 1.5f);
+        Destroy(goParticle, 1f);
     }
 
     public void resetPos(){
