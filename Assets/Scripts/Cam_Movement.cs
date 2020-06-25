@@ -14,9 +14,7 @@ public class Cam_Movement : MonoBehaviour
 
     void LateUpdate()
     {
-
-
-        if(player != null)
+        if(player != null && Time.timeScale != 0f)
         {
             offset = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset;
             transform.position = player.position + offset;
